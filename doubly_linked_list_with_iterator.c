@@ -286,6 +286,7 @@ bool list_it_next(IntListIterator it){
         }
         return false;
     }
+    return false;
 }
 
 bool list_it_previous(IntListIterator it){
@@ -296,12 +297,14 @@ bool list_it_previous(IntListIterator it){
         }
         return false;
     }
+    return false;
 }
 
 int list_it_get(IntListIterator it){
     if(list_it_is_valid(it)){
         return it->cur->payload;
     }
+    return 0;
 }
 
 void list_it_set(IntListIterator it, int value){
