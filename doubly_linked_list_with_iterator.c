@@ -223,9 +223,15 @@ int list_remove_at(IntList list, unsigned int index){
         for (int i = 0; i < index; ++i) {
             temp = temp->next;
         }
-        value = temp->payload;
-        temp->payload = 0;
-        return value;
+        if(temp->payload == 0){
+            return 0;
+        }
+        else{
+            value = temp->payload;
+            temp->payload = 0;
+            return value;
+        }
+
     }
     return 0;
 
@@ -234,14 +240,9 @@ void list_clear(IntList list){
     if(list_is_valid(list)){
         IntNode temp = list->head;
         for (int i = 0; i < list_get_size(list); ++i) {
-            temp->payload=0;
-            if (temp->next != 0){
+                IntNode node = temp;
                 temp = temp->next;
-            }
-            else{
-                return;
-            }
-
+                list_release_node(node);
         }
     }
 }
