@@ -199,6 +199,7 @@ if(list_is_valid(list)){
     for (int i = 0; i < list_get_size(list); ++i) {
         if(temp->payload==value){
             temp->payload=0;
+            list_release_node(temp);
             return;
         }
        temp = temp->next;
@@ -211,6 +212,7 @@ void list_remove_all(IntList list, int value){
         for (int i = 0; i < list_get_size(list); ++i) {
             if(temp->payload==value){
                 temp->payload=0;
+                list_release_node(temp);
             }
             temp = temp->next;
         }
@@ -229,6 +231,7 @@ int list_remove_at(IntList list, unsigned int index){
         else{
             value = temp->payload;
             temp->payload = 0;
+            list_release_node(temp);
             return value;
         }
 
