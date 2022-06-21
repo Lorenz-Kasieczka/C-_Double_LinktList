@@ -41,31 +41,18 @@
 #include "allocator.h"
 #include <limits.h>
 /** The type of list nodes */
-
-/** The implementation of list node data */
-
-/** The implementation of list data */
-
-/** The implementation of list iterator data */
-
-
-/* ===================================================================== */
-/* private list functions */
-
-
 typedef struct IntNodeData* IntNode;
-
 /** The implementation of list node data */
 struct IntNodeData {
     IntNode next;
     IntNode prev;
     int payload;
 };
-
 /** The implementation of list data */
 struct IntListData {
     IntNode head;
 };
+/** The implementation of list iterator data */
 struct IntListIteratorData{
     int length;
 
@@ -73,6 +60,11 @@ struct IntListIteratorData{
     IntNode head;
     IntNode tail;
 };
+/* ===================================================================== */
+/* private list functions */
+
+
+
 
 /* abstract away and generalize also memory allocation for list nodes */
 static IntNode list_obtain_node(int value) {
