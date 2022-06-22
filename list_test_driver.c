@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 	ADD_TEST(test_list_append__shall_append_empty_list_to_filled_list);
 	ADD_TEST(test_list_append__shall_append_filled_list_to_filled_list);
 	ADD_TEST(test_list_append__shall_ignore_invalid_lists);
-/*
+
 	ADD_TEST(test_list_it_obtain__shall_allocate_and_release_a_list_iterator_for_a_list);
 	ADD_TEST(test_list_it_obtain__shall_allocate_and_point_to_list_head);
 	ADD_TEST(test_list_it_obtain__shall_not_allocate_a_list_iterator_for_an_invalid_list);
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 	ADD_TEST(test_list_it_set_get__shall_modify_value);
 	ADD_TEST(test_list_it_get__shall_return_0_for_invalid_iterator);
 	ADD_TEST(test_list_it_set__shall_ignore_call_for_invalid_iterator);
-*/
+
 	run_tests();
 	return 0;
 }
